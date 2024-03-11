@@ -16,7 +16,8 @@ class OrderListCreateAPIView(generics.ListCreateAPIView):
             queryset = queryset.filter(order_items__product__name__in=products_list).distinct()
 
         if customer:
-            queryset = queryset.filter(customer__name=customer)
+            customers_list = customer.split(',')
+            queryset = queryset.filter(customer__name__in=customers_list)
 
         return queryset
 
