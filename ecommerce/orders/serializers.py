@@ -33,3 +33,12 @@ class OrderSerializer(serializers.ModelSerializer):
         for item_data in items_data:
             OrderItem.objects.create(order=order, **item_data)
         return order
+
+    def update(self, instance, validated_data):
+        items_data = validated_data.pop('order_items', None)
+        instance = super().update(instance, validated_data)
+        if items_data is not None:
+            instance.order_items.all().delete()
+            for item_data in items_data:
+                OrderItem.objects.create(order=instance, **item_data)
+        return instance

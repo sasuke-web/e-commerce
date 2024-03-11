@@ -18,7 +18,7 @@ class Order(models.Model):
                 self.order_number = 'ORD00001'
             else:
                 order_number = int(last_order.order_number[3:]) + 1
-                self.order_number = f'ORD{order_number}'
+                self.order_number = f'ORD{order_number:05}'
         super(Order, self).save(*args, **kwargs)
 
 class OrderItem(models.Model):
