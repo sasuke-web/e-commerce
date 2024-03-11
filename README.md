@@ -5,31 +5,31 @@ This is an e-commerce API built with Django Rest Framework for managing customer
 ## Installation
 
 1. Clone the repository:
-
-   git clone https://github.com/yourusername/e-commerce.git
-   cd e-commerce
-
+    ```
+    git clone https://github.com/yourusername/e-commerce.git
+    cd e-commerce
+    ```
 2. Create and activate a virtual environment (optional but recommended):
-
-    python3 -m venv venv
-    source venv/bin/activate
-
+    ```
+        python3 -m venv venv
+        source venv/bin/activate
+    ```
 3. Install dependencies:
-
-    pip install -r requirements.txt
-
+    ```
+        pip install -r requirements.txt
+    ```
 4. Set up the database (SQLite is used by default):
-
-    python manage.py migrate
-
+    ```
+        python manage.py migrate
+    ```
 5. Create a superuser:
-
-    python manage.py createsuperuser
-
+    ```
+        python manage.py createsuperuser
+    ```
 6. Run the development server:
-
-    python manage.py runserver
-
+    ```
+        python manage.py runserver
+    ```
 
 ## API Endpoints
 
