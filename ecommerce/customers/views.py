@@ -1,6 +1,6 @@
 from rest_framework import generics, mixins
-from .models import Customer
-from .serializers import CustomerSerializer
+from customers.models import Customer
+from customers.serializers import CustomerSerializer
 
 class CustomerListCreateAPIView(mixins.ListModelMixin, mixins.CreateModelMixin, generics.GenericAPIView):
     queryset = Customer.objects.all()
