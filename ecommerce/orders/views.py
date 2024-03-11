@@ -13,7 +13,7 @@ class OrderListCreateAPIView(generics.ListCreateAPIView):
 
         if products:
             products_list = products.split(',')
-            queryset = queryset.filter(items__product__name__in=products_list).distinct()
+            queryset = queryset.filter(order_items__product__name__in=products_list).distinct()
 
         if customer:
             queryset = queryset.filter(customer__name=customer)
