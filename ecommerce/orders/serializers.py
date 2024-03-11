@@ -1,6 +1,6 @@
 from rest_framework import serializers
-from .models import Order, OrderItem
 from django.utils import timezone
+from orders.models import Order, OrderItem
 
 class OrderItemSerializer(serializers.ModelSerializer):
     class Meta:
@@ -16,7 +16,6 @@ class OrderSerializer(serializers.ModelSerializer):
 
     def validate(self, data):
         # Check cumulative weight
-        print('>>>>>>>>>>>.dataaa',data)
         total_weight = sum(item['product'].weight * item['quantity'] for item in data['order_items'])
         if total_weight > 150:
             raise serializers.ValidationError("The cumulative weight of the order items cannot exceed 150kg.")

@@ -1,7 +1,6 @@
 from rest_framework import generics
-from .models import Order
-from .serializers import OrderSerializer
-from django.db.models import Q
+from orders.models import Order
+from orders.serializers import OrderSerializer
 
 class OrderListCreateAPIView(generics.ListCreateAPIView):
     queryset = Order.objects.all()
