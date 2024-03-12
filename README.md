@@ -6,8 +6,8 @@ This is an e-commerce API built with Django Rest Framework for managing customer
 
 1. Clone the repository:
     ```
-    git clone https://github.com/yourusername/e-commerce.git
-    cd e-commerce
+        git clone https://github.com/yourusername/e-commerce.git
+        cd ecommerce
     ```
 2. Create and activate a virtual environment (optional but recommended):
     ```
